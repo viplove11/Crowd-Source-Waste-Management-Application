@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     overflow-y:scroll ;
-    height: 200px;
+    height: 350px;
     padding: 10px;
     /* border: 1px solid orange; */
   }
@@ -85,3 +85,26 @@
 
     border-radius: 10px;
   } 
+
+  .no-recent-entry{
+    margin:0 ;
+    /* border: 1px solid red; */
+    height: 100%;
+    padding: 10px;
+  }
+  .no-recent-entry p{
+    font-weight: 500;
+    font-size: 7.4vw;
+    text-align: center;
+    margin: 0;
+    color: rgb(223, 220, 220);
+animation: fade 4s linear infinite;
+  }
+  @keyframes fade{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity : 1
+    }
+  }

@@ -4,14 +4,15 @@ import React, { createContext, useState } from 'react';
 export const ReportsContext = createContext();
 
 export const ReportsProvider = ({ children }) => {
-  const [reports, setReports] = useState([]);
+    const [reports, setReports] = useState([]);
+    const [uploadedImage, setUploadedImage] = useState(null);
 
   const addReport = (report) => {
     setReports((prevReports) => [...prevReports, report]);
   };
 
   return (
-    <ReportsContext.Provider value={{ reports, addReport }}>
+    <ReportsContext.Provider value={{ reports, addReport, uploadedImage, setUploadedImage }}>
       {children}
     </ReportsContext.Provider>
   );
