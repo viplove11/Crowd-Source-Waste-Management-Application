@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { FaBell } from "react-icons/fa";
+import { FaLeaf } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -10,8 +11,12 @@ const Navbar = () => {
             <p>Eco <span>Track</span></p>
         </div>
         <div className="nav-impactScore">
-            <p>impact Score : </p>
-            <FaBell />
+          <div className='score-text'>
+          <FaLeaf />
+            <p>
+            impact Score : 200</p>
+          </div>
+            <FaBell className='bell' />
         </div>
     </div>
   )
