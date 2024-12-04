@@ -1,4 +1,2 @@
-fyygeuru hgiuhruhvohrvoijajfpojvpe
 
-
-fvefv
+print('Viplove Parsai')
