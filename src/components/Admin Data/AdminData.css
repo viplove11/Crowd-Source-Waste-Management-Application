@@ -1,0 +1,126 @@
+.admin-data{
+    border: 1px solid red;
+    /* padding: 10px; */
+}
+.mynavbar{
+    padding: 10px;
+box-shadow: 0px 0px 6px rgb(213, 212, 212);
+}
+.mynavbar p{
+    margin : 0;
+    text-align: left!important;
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+.mynavbar span{color: orange;}
+
+.admin-content{
+    padding: 10px;
+    /* overflow-y: scroll; */
+    height: 100%;
+    width: 100%;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+.admin-recent-entry{
+    border: 1px solid green;
+    width: 60%;
+    padding: 10px;
+}
+.admin-recent-entry h2{
+    color: rgb(188, 187, 187);
+    margin: 0;
+}
+
+.admin-recent-entry .recent-reports{
+    overflow-y: scroll;
+    padding: 20px;
+    height: 80vh;
+    border: 1px solid red;
+    margin-top: 30px ;
+}
+
+.recent-reports .report{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.report{
+    border: 1px solid rgb(203, 202, 202);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 10px 0px;
+    justify-content: space-between;
+  }
+
+  .report .text-content{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 0px 20px;
+    font-weight: 500;
+  }
+  .report .text-content .text-title{
+    margin: 0;
+    font-size: 20px;
+  }
+  .report .text-content .location{
+    color: grey;
+    margin: 0;
+  }
+
+  .category-time{
+    margin: 0;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    /* border: 1px solid black; */
+    width: auto;
+    padding: 5px 0px;
+
+  }
+
+  .category-time .urgent{
+    padding: 4px 7px ;
+    background-color: rgb(239, 216, 216);
+    color: red;
+    border-radius: 50px;
+}
+.category-time .approvalStatus{
+      padding: 4px 7px ;
+      background-color: rgb(147, 224, 171);
+      color: green;
+      border-radius: 50px;
+
+  }
+  .category-time .approvalStatus svg{
+    /* font-size: 20px; */
+    margin-bottom: 3px;
+    font-weight: bold;
+  }
+  .category-time .time
+  {
+    color: grey;
+    margin-top: 4px;
+  }
+
+
+.approval-button{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.admin-ratings-graph{
+    border: 1px solid green;
+    width: 40%;
+    padding: 10px;
+}
+

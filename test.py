@@ -1,2 +1,0 @@
-
-print('Viplove Parsai')
