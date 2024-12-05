@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import './RecentReports.css';
 import { ReportsContext } from '../../Store/ReportsContext';
+import { GoDotFill } from "react-icons/go";
 
 const RecentReports = () => {
   const { reports } = useContext(ReportsContext);
@@ -8,12 +9,12 @@ const RecentReports = () => {
   return (
     <div className="recent-report">
       <p className='recent-title'>Recent Reports</p>
-      {/* no recent message div */}
-      {reports.length === 0 ?
+      {/* No recent message div */}
+      {reports.length === 0 ? (
         <div className="no-recent-entry">
-<p>No Recent Reports</p>
+          <p>No Recent Reports</p>
         </div>
-        :
+      ) : (
         <div className="report-list">
           {/* Render each report */}
           {reports.map((report, index) => (
@@ -24,17 +25,24 @@ const RecentReports = () => {
                 <div className='category-time'>
                   <span className='urgent'>{report.wasteCategory}</span>
                   <span className='time'>time</span>
+                  <span className='approvalStatus'><GoDotFill />
+                                            Pending</span>
                 </div>
               </div>
               <div className="image">
-                <img
-                  src={URL.createObjectURL(report.image.file)} // Accessing image file correctly
-                  alt="Report"
-                />
+                {report.image && report.image.base64 ? (
+                  <img
+                    src={report.image.base64} // Use base64 directly
+                    alt="Report"
+                  />
+                ) : (
+                  <p>No image available</p>
+                )}
               </div>
             </div>
           ))}
-        </div>}
+        </div>
+      )}
     </div>
   );
 };

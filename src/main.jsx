@@ -8,7 +8,7 @@ import Admin from './Pages/Admin/Admin.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  
     <ReportsProvider>
       <BrowserRouter> {/* Add this wrapper */}
         <Routes>
@@ -17,5 +17,4 @@ createRoot(document.getElementById('root')).render(
         </Routes>
       </BrowserRouter>
     </ReportsProvider>
-  </StrictMode>
 );

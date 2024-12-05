@@ -72,6 +72,18 @@
     margin-top: 4px;
   }
 
+  .category-time .approvalStatus{
+    padding: 4px 7px ;
+    background-color: rgb(147, 224, 171);
+    color: green;
+    border-radius: 50px;
+
+}
+.category-time .approvalStatus svg{
+  /* font-size: 20px; */
+  margin-bottom: 3px;
+  font-weight: bold;
+}
 
  
 

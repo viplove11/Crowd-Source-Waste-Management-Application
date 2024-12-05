@@ -6,7 +6,6 @@ const QuickReports = () => {
   const [selectedWasteType, setSelectedWasteType] = useState("");
   const [category, setCategory] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
-  // const [uploadedImage, setUploadedImage] = useState(null);
 
   // Using context
   const { uploadedImage, setUploadedImage, reports, addReport } = useContext(ReportsContext);
@@ -35,13 +34,15 @@ const QuickReports = () => {
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
-    if (file) {
+    if (file && file.type.startsWith("image/")) { // Ensure the file is an image
       setUploadedImage({
         name: file.name,
         type: file.type,
         size: file.size,
         file: file,
       });
+    } else {
+      alert("Please upload a valid image file.");
     }
   };
 
@@ -65,7 +66,7 @@ const QuickReports = () => {
     setIsDisabled(true);
     setCategory("");
     setSelectedWasteType("");
-    setUploadedImage(null);
+    setUploadedImage(null); // Reset uploaded image
   };
 
   return (
@@ -136,7 +137,7 @@ const QuickReports = () => {
             id="imageUpload"
             onChange={handleImageUpload}
           />
-          {uploadedImage && (
+          {uploadedImage && uploadedImage.file && (
             <div className="image-preview mt-2">
               <p>
                 <strong>Selected Image:</strong> {uploadedImage.name} (
