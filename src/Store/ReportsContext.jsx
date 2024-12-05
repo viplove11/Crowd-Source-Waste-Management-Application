@@ -43,7 +43,6 @@ export const ReportsProvider = ({ children }) => {
         };
       } catch (error) {
         console.error('Error converting image to base64:', error);
-        // Optionally handle the error, maybe show a user-friendly message
       }
     }
 
@@ -61,13 +60,31 @@ export const ReportsProvider = ({ children }) => {
     localStorage.setItem('reports', JSON.stringify(updatedReports));
   };
 
+  // Function to approve a report (mark it as completed)
+  const approveReport = (index) => {
+    const updatedReports = [...reports];
+    updatedReports[index] = {
+      ...updatedReports[index],
+      status: 'Completed', // Change status to "Completed"
+    };
+    setReports(updatedReports);
+    localStorage.setItem('reports', JSON.stringify(updatedReports));
+  };
+
+  // Function to reject a report (remove it from the list)
+  const rejectReport = (index) => {
+    const updatedReports = reports.filter((_, i) => i !== index); // Remove the report at index
+    setReports(updatedReports);
+    localStorage.setItem('reports', JSON.stringify(updatedReports));
+  };
+
   // Save reports to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem('reports', JSON.stringify(reports));
   }, [reports]);
 
   return (
-    <ReportsContext.Provider value={{ reports, addReport, uploadedImage, setUploadedImage }}>
+    <ReportsContext.Provider value={{ reports, addReport, uploadedImage, setUploadedImage, approveReport, rejectReport }}>
       {children}
     </ReportsContext.Provider>
   );

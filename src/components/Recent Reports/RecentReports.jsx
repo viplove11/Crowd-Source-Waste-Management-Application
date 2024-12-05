@@ -4,7 +4,7 @@ import { ReportsContext } from '../../Store/ReportsContext';
 import { GoDotFill } from "react-icons/go";
 
 const RecentReports = () => {
-  const { reports } = useContext(ReportsContext);
+  const { reports, isPending, setIsPending } = useContext(ReportsContext);
 
   return (
     <div className="recent-report">
@@ -23,10 +23,12 @@ const RecentReports = () => {
                 <p className='text-title'>{report.description}</p>
                 <p className='location'>Location</p>
                 <div className='category-time'>
-                  <span className='urgent'>{report.wasteCategory}</span>
-                  <span className='time'>time</span>
-                  <span className='approvalStatus'><GoDotFill />
-                                            Pending</span>
+                  <span className={ report.wasteCategory === 'Regular'? 'regular': report.wasteCategory === 'Occasional'?'occasional':'urgent'}>{report.wasteCategory}</span>
+                  <span className='time'>{report.time}</span>
+                  <span className={report.status === 'Pending' ? "pending" : "Completed"}>
+                      <GoDotFill  className="svgIcon"/>
+                      {report.status === 'Pending' ? "Pending" : "Completed"}
+                    </span>
                 </div>
               </div>
               <div className="image">

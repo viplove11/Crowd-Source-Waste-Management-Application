@@ -57,6 +57,8 @@ const QuickReports = () => {
       wasteCategory,
       wasteType,
       image: uploadedImage, // Attach the uploaded image
+      time: new Date().toLocaleString(),
+      status: 'Pending'
     };
 
     addReport(newReport);
