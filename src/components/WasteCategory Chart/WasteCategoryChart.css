@@ -1,0 +1,13 @@
+.pie-chart-container {
+    width: 100%; /* Set the desired width */
+    height: 100%; /* Set the desired height */
+    margin: 0 auto; /* Center the chart */
+    /* border: 1px solid red; */
+    display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; 
+  }
+  .legendName{
+    display: flex;
+    flex-direction: row;
+  }
