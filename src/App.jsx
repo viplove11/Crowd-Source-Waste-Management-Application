@@ -6,16 +6,17 @@ import Navbar from './components/Navbar/Navbar';
 import RecentReports from './components/Recent Reports/RecentReports';
 import Community from './components/Community/Community';
 import QuickReports from './components/Quick Reports/QuickReports';
-import { ReportsProvider } from './Store/ReportsContext'; // Import the ReportsProvider
+import { ReportsProvider } from './Store/ReportsContext'; 
+import Location_Map from './components/Location_Map/Location_Map';
 
 const App = () => {
   return (
-    <ReportsProvider> {/* Wrap your components with ReportsProvider */}
+    <ReportsProvider> 
       <>
         <Navbar />
         <div className='app'>
           <div className="map-recentReports">
-            <div className="map"></div>
+            <div className="map"><Location_Map></Location_Map></div>
             <RecentReports />
           </div>
           {/* community and quick reports */}

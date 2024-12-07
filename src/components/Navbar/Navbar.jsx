@@ -10,14 +10,6 @@ const Navbar = () => {
         <div className='nav-logo'>
             <p>Eco <span>Track</span></p>
         </div>
-        <div className="nav-impactScore">
-          <div className='score-text'>
-          <FaLeaf />
-            <p>
-            impact Score : 200</p>
-          </div>
-            <FaBell className='bell' />
-        </div>
     </div>
   )
 }

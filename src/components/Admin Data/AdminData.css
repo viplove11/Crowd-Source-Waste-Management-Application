@@ -16,21 +16,20 @@
 
 .admin-content {
   padding: 10px;
-  /* overflow-y: scroll; */
   height: 100%;
   width: 100%;
-  /* border: 1px solid green; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
+  background-color: rgb(249, 249, 249);
 }
 
 .admin-recent-entry {
-  /* border: 1px solid green; */
   width: 60%;
   padding: 10px;
   box-shadow: 0px 0px 6px rgb(222, 220, 220);
+  background-color: white;
 }
 
 .admin-recent-entry h2 {
@@ -51,14 +50,10 @@
   padding: 20px;
   height: 80vh;
   margin-top: 30px;
-  
-  /* Enhanced scrollbar styles */
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #888 #f1f1f1; /* For Firefox */
-  
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }
 
-/* For Chrome, Edge, and Safari */
 .admin-recent-entry .recent-reports::-webkit-scrollbar {
   width: 5px;
   display: none;
@@ -101,7 +96,6 @@
 }
 
 .report .text-content {
-  /* border: 1px solid black; */
   width: fit-content;
   padding: 0px 20px;
   font-weight: 500;
@@ -124,13 +118,12 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 50px;
-  /* border: 1px solid black; */
   width: auto;
   padding: 5px 0px;
 
 }
 
-.category-time .urgent {
+.category-time .pending {
   padding: 4px 7px;
   background-color: rgb(239, 216, 216);
   color: red;
@@ -147,7 +140,7 @@
 
 }
 
-.category-time .occasional {
+.category-time .approved {
   padding: 4px 7px;
   background-color: rgb(245, 232, 198);
   color: rgb(238, 113, 12);
@@ -171,7 +164,6 @@
 }
 
 .svgIcon {
-  /* font-size: 20px; */
   margin-bottom: 3px;
   font-weight: bold;
 }
@@ -192,7 +184,6 @@
 
 .admin-no-recent-entry {
   margin: 0;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -203,7 +194,430 @@
 
 
 .admin-ratings-graph {
-  border: 1px solid green;
   width: 40%;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+
+}
+
+.admin-chart-representation {
+  box-shadow: 0px 0px 6px rgb(222, 220, 220);
+  background-color: white;
+  padding: 20px;
+  height: 60%;
+}
+
+.admin-chart-para {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+.admin-report-category-data {
+  width: 100%;
+  height: 40%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 6px rgb(222, 220, 220);
+}
+
+.total-report-count {
+  height: 50%;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #343131;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.total-report-count p,
+.pending-category-count p,
+.approved-category-count p {
+  color: white;
+  font-size: 3vw;
+  margin: 0;
+  font-weight: 500;
+}
+
+.total-report-count span {
+  font-size: 1.6vw;
+  color: #FA812F;
+  font-weight: 500;
+}
+
+.individual-report-count {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  gap: 10px;
+}
+
+.pending-category-count,
+.approved-category-count {
+  height: 100%;
+  width: 50%;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.pending-category-count {
+  background-color: #F72C5B;
+  padding-left: 20px;
+}
+
+.approved-category-count {
+  background-color: #FA812F;
+  padding-left: 20px;
+}
+
+.pending-category-count span {
+  color: antiquewhite;
+  font-size: 1.6vw;
+  font-weight: 500;
+}
+
+.approved-category-count span {
+  color: #343131;
+  font-size: 1.6vw;
+  font-weight: 500;
+}
+
+@media (max-width:768px) {
+  .mynavbar p {
+    margin: 0;
+    text-align: left !important;
+    font-size: 5vw;
+    font-weight: 500;
+  }
+
+  .admin-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: rgb(249, 249, 249);
+  }
+
+  .admin-recent-entry {
+    width: max-content;
+    box-shadow: 0px 0px 6px rgb(222, 220, 220);
+    background-color: white;
+  }
+
+  .admin-no-recent-entry p {
+    font-weight: 500;
+    font-size: 6vw;
+    text-align: center;
+    margin: 0;
+    color: rgb(223, 220, 220);
+  }
+
+  .admin-recent-entry .recent-reports {
+    overflow-y: scroll;
+    height: auto;
+    margin-top: 30px;
+
+  }
+
+  .recent-reports .report {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  .report {
+    border: 1px solid rgb(203, 202, 202);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 10px 0px;
+    justify-content: space-between;
+  }
+
+  .category-time {
+    margin: 0;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+    width: auto;
+    padding: 5px 0px;
+
+  }
+
+  .approval-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .image img {
+    height: 200px !important;
+    width: 100%;
+  }
+
+  ;
+
+  .admin-no-recent-entry {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .admin-ratings-graph {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-chart-representation {
+    box-shadow: 0px 0px 6px rgb(222, 220, 220);
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    height: 60%;
+  }
+
+  .admin-chart-para {
+    font-size: 5vw;
+    font-weight: 500;
+  }
+
+  .admin-report-category-data {
+    width: 100%;
+    height: 40%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 6px rgb(222, 220, 220);
+  }
+
+  .total-report-count {
+    height: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #343131;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .total-report-count span {
+    font-size: 5vw;
+  }
+
+  .individual-report-count {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100% !important;
+    gap: 10px;
+  }
+
+  .pending-category-count,
+  .approved-category-count {
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .pending-category-count span {
+    font-size: 5vw;
+  }
+
+  .approved-category-count span {
+    font-size: 5vw;
+  }
+
+  .total-report-count p,
+  .pending-category-count p,
+  .approved-category-count p {
+    font-size: 9vw;
+  }
+}
+
+@media (max-width:368px) {
+  .mynavbar p {
+    margin: 0;
+    font-size: 5vw;
+    font-weight: 500;
+  }
+
+  .admin-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .admin-recent-entry {
+    width: max-content;
+  }
+
+  .admin-no-recent-entry p {
+    font-weight: 500;
+    font-size: 6vw;
+    text-align: center;
+    margin: 0;
+  }
+
+  .admin-recent-entry .recent-reports {
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .recent-reports .report {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  .report {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+  }
+
+  .category-time {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+    width: auto;
+  }
+
+  .approval-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .image img {
+    height: 200px !important;
+    width: 100%;
+  }
+
+  ;
+
+  .admin-no-recent-entry {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+  }
+
+
+  .admin-ratings-graph {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-chart-representation {
+    width: 100%;
+    padding: 20px;
+    height: 60%;
+  }
+
+  .admin-chart-para {
+    font-size: 5vw;
+    font-weight: 500;
+  }
+
+  .admin-report-category-data {
+    width: 100%;
+    height: 40%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 6px rgb(222, 220, 220);
+  }
+
+  .total-report-count {
+    height: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #343131;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .total-report-count span {
+    font-size: 5vw;
+  }
+
+  .individual-report-count {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100% !important;
+    gap: 10px;
+  }
+
+  .pending-category-count,
+  .approved-category-count {
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .pending-category-count span {
+    font-size: 5vw;
+  }
+
+  .approved-category-count span {
+    font-size: 5vw;
+  }
+
+  .total-report-count p,
+  .pending-category-count p,
+  .approved-category-count p {
+    font-size: 9vw;
+  }
 }

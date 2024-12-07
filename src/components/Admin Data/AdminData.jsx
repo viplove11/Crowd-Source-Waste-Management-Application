@@ -2,9 +2,32 @@ import React, { useContext } from "react";
 import "./AdminData.css";
 import { ReportsContext } from "../../Store/ReportsContext";
 import { GoDotFill } from "react-icons/go";
+import WasteCategoryChart from "../WasteCategory Chart/WasteCategoryChart";
 
 const AdminData = () => {
   const { reports, approveReport, rejectReport } = useContext(ReportsContext);
+
+  const countReports = () => {
+    let pendingCount = 0;
+    let approvedCount = 0;
+
+    reports.forEach(report => {
+      if (report.status === 'Pending') {
+        pendingCount++;
+      } else if (report.status === 'Completed') {
+        approvedCount++;
+      }
+    });
+
+    return {
+      totalCount: reports.length,
+      pendingCount,
+      approvedCount,
+    };
+  };
+
+  const { totalCount, pendingCount, approvedCount } = countReports();
+
 
   return (
     <div className="admin-data">
@@ -29,7 +52,7 @@ const AdminData = () => {
                 <div className="report" key={index}>
                   <div className="text-content">
                     <p className="text-title">{report.description}</p>
-                    <p className="location">Location</p>
+                    <p className="location"><a href={report.locationURL} target="blank">Get Location</a></p>
                     <div className="category-time">
                       <span
                         className={
@@ -87,7 +110,29 @@ const AdminData = () => {
 
         {/* graph representation starts here */}
         <div className="admin-ratings-graph">
-          {/* Graph content can go here */}
+          <div className="admin-chart-representation">
+            <p className="admin-chart-para">Waste Category Distribution</p>
+            <WasteCategoryChart></WasteCategoryChart>
+          </div>
+          <div className="admin-report-category-data">
+            <div className="total-report-count">
+              <p>{ totalCount}</p>
+              <span>Total Report's</span>
+            </div>
+            {/* individual count */}
+            <div className="individual-report-count">
+              <div className="pending-category-count">
+                <p>{ pendingCount}</p>
+                <span>Pending Report's</span>
+              </div>
+              <div className="approved-category-count">
+              <p>{ approvedCount}</p>
+              <span>Approved Report's</span>
+              </div>
+              
+
+            </div>
+          </div>
         </div>
       </div>
     </div>

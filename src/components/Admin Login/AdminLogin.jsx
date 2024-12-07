@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import './AdminLogin.css';
-import { adminData } from '../../assets/AdminData';
+import React, { useRef } from "react";
+import "./AdminLogin.css";
+import { adminData } from "../../assets/AdminData";
 
 const AdminLogin = ({ login, setLogin }) => {
   const form_username = useRef();
@@ -20,10 +20,10 @@ const AdminLogin = ({ login, setLogin }) => {
     );
 
     if (user) {
-      setLogin(user); // Update state with logged-in user details
-      alert('Logged in successfully');
+      setLogin(user);
+      alert("Logged in successfully");
     } else {
-      alert('Login failed. Invalid username or password.');
+      alert("Login failed. Invalid username or password.");
     }
   };
 
@@ -46,11 +46,7 @@ const AdminLogin = ({ login, setLogin }) => {
           <label htmlFor="exampleInputPassword1" className="form-label">
             Password
           </label>
-          <input
-            type="password"
-            className="form-control"
-            ref={form_password}
-          />
+          <input type="password" className="form-control" ref={form_password} />
         </div>
         <button type="submit" className="btn btn-primary">
           Login

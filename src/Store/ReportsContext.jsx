@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 
 // Maximum image size (2MB) and report count limit (100)
-const MAX_IMAGE_SIZE = 2 * 1024 * 1024; // 2MB
+const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 2MB
 const MAX_REPORTS = 100; // Max number of reports in localStorage
 
 export const ReportsContext = createContext();
@@ -14,6 +14,13 @@ export const ReportsProvider = ({ children }) => {
   });
 
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [streetAdress, setStreetAdress] = useState('')
+  const [city, setCity] = useState('')
+  const [pincode, setPincode] = useState('')
+  const[state, setState] = useState('')
+  const [country, setCountry] = useState('India')
+  const [locationURL, setLocationURL] = useState('')
+  const [isAddressFetched, setIsAddressFetched] = useState(false)
 
   // Function to convert image file to base64 string
   const fileToBase64 = (file) => {
@@ -84,7 +91,7 @@ export const ReportsProvider = ({ children }) => {
   }, [reports]);
 
   return (
-    <ReportsContext.Provider value={{ reports, addReport, uploadedImage, setUploadedImage, approveReport, rejectReport }}>
+    <ReportsContext.Provider value={{ reports, addReport, uploadedImage, setUploadedImage, approveReport, rejectReport , city, setCity, pincode, setPincode, streetAdress, setStreetAdress, country, setCountry, state, setState, locationURL, setLocationURL, isAddressFetched, setIsAddressFetched}}>
       {children}
     </ReportsContext.Provider>
   );

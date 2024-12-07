@@ -8,7 +8,7 @@ const QuickReports = () => {
   const [isDisabled, setIsDisabled] = useState(true);
 
   // Using context
-  const { uploadedImage, setUploadedImage, reports, addReport } = useContext(ReportsContext);
+  const { uploadedImage, setUploadedImage, reports, addReport , streetAdress, city, pincode, country, state, locationURL, isAddressFetched, setIsAddressFetched} = useContext(ReportsContext);
 
   // Using useRef() for form elements data
   const formData = useRef();
@@ -58,17 +58,26 @@ const QuickReports = () => {
       wasteType,
       image: uploadedImage, // Attach the uploaded image
       time: new Date().toLocaleString(),
-      status: 'Pending'
+      status: 'Pending',
+      streetAdress: streetAdress,
+      city: city,
+      state:state,
+      pincode: pincode,
+      country: country,
+      locationURL: locationURL,
     };
 
     addReport(newReport);
-
+  
     // Reset form and state
     formData.current.reset();
     setIsDisabled(true);
     setCategory("");
     setSelectedWasteType("");
-    setUploadedImage(null); // Reset uploaded image
+    setUploadedImage(null);
+    setIsAddressFetched(false)
+
+    
   };
 
   return (
@@ -154,7 +163,7 @@ const QuickReports = () => {
           )}
         </div>
 
-        <button className="btn" id="myBtn">
+        <button className="btn" id="myBtn"  disabled={!isAddressFetched}>
           Send Report
         </button>
       </form>
