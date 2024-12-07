@@ -1,0 +1,80 @@
+.map-section {
+    margin: 0;
+    padding: 0;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.map-section-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.map-section-form .country-code,
+.street-add {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+
+}
+
+.country {
+    width: 40%;
+}
+
+.code {
+    width: 40%;
+}
+
+.myAddressButton {
+    width: 20%;
+}
+
+.map-section-form input::placeholder {
+    color: rgb(206, 205, 205);
+}
+
+@media (max-width:768px) {
+    .map-section {
+        margin: 0;
+        padding: 0;
+        padding: 4px;
+        height: auto;
+    }
+
+    .map-section-form .street-add,
+    .map-section-form .country-code {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .country,
+    .code,
+    .myAddressButton {
+        width: 100%;
+    }
+}
+
+@media (max-width:368px) {
+    .map-section {
+        margin: 0;
+        padding: 0;
+        padding: 4px;
+        height: auto;
+    }
+
+    .map-section-form .street-add,
+    .map-section-form .country-code {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .country,
+    .code,
+    .myAddressButton {
+        width: 100%;
+    }
+}

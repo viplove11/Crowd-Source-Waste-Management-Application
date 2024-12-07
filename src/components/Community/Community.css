@@ -1,0 +1,29 @@
+.community{
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+    box-shadow: 0px 0px  6px rgb(222, 220, 220);
+  }
+  .community .text{
+    font-size: 20px;
+    font-weight: 500;
+  } 
+
+  .community-graph{
+    padding: 10px;
+    height: 40vh;
+  }
+
+  @media (max-width: 768px)
+  {
+    .community .text p{
+      font-size: 6vw;
+    }
+  }
+  @media (max-width: 368px)
+  {
+    .community .text p{
+      font-size: 6vw;
+    }
+  }
