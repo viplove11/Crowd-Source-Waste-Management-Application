@@ -1,15 +1,16 @@
 import React from 'react'
 import './Navbar.css'
-import { FaBell } from "react-icons/fa";
-import { FaLeaf } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
-        <div className='nav-logo'>
-            <p>Eco <span>Track</span></p>
-        </div>
+    <div className='Mynavbar'>
+      <div className='nav-logo'>
+        <p>Eco <span>Track</span></p>
+      </div>
+      
+        <Link to="/admin" className='AdminLoginButton'>Admin Login</Link>
+
     </div>
   )
 }

@@ -1,80 +1,69 @@
-.navbar{
-    width: 100%;
-    box-shadow: 0px 0px 6px rgb(222, 222, 222);
-    padding: 10px 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    font-size: 1vw;
+.Mynavbar {
+  width: 100%;
+  box-shadow: 0px 0px 6px rgb(222, 222, 222);
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  font-size: 1vw;
 }
-.nav-logo{
-    width: 100%;
+.nav-logo {
+  width: 50%;
+}
+.nav-logo p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 2vw;
+}
+.nav-logo span {
+  color: orange;
+}
+.AdminLoginButton {
+  /* border: 1px solid green; */
+  text-decoration: none;
+  padding: 4px 7px;
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+}
 
-}
-.nav-logo p{
-    margin: 0;
-    font-weight: 500;
-    font-size: 2vw;
-}
-.nav-logo span{
-    color: orange;
-}
-.nav-impactScore{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    gap: 100px;
-    text-transform: capitalize;
-    width: 50%;
-    padding: 0;
-    font-weight: 500;
-}
-.score-text{
-    display: flex;
+@media (max-width: 768px) {
+  .Mynavbar {
+    width: 100%;
     flex-direction: row;
     justify-content: space-around;
-    gap: 10px;
-    background-color: rgb(193, 239, 223);
-    padding: 4px;
-    border-radius: 10px;
+    gap: 20px;
+  }
+  .nav-logo p {
+    font-size: 6vw;
+    width: max-content;
+  }
+  .AdminLoginButton {
+    width: max-content;
+    text-align: center;
+    font-size: 4vw;
+  }
+  .nav-impactScore {
+    display: none;
+  }
 }
-
-.nav-impactScore p{
-    margin: 0;
-}
-.nav-impactScore svg{
-    margin-top: 5px;
-}
-.bell{
-    color: rgb(121, 120, 120);
-    margin-right: 20px;
-}
-
-@media (max-width:768px)
-{
-    .navbar{
-        width: 100%;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-    .nav-logo p{
-        font-size: 8vw;
-    }
-    .nav-impactScore{
-        display: none;
-    }
-}
-@media (max-width:368px)
-{
-    .navbar{
-        width: 100%;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-    .nav-logo p{
-        font-size: 8vw;
-    }
-    .nav-impactScore{
-        display: none;
-    }
+@media (max-width: 368px) {
+  .Mynavbar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .nav-logo p {
+    font-size: 6vw;
+    width: max-content;
+  }
+  .AdminLoginButton {
+    width: max-content;
+    text-align: center;
+    font-size: 4vw;
+  }
+  .nav-impactScore {
+    display: none;
+  }
 }
